@@ -1,1 +1,3 @@
-# AWS-PROJECT-VERSION-2
+# AWS PROJECT VERSION 2
+
+This project retrieves financial complaint data from the Consumer Finance Protection Bureau (CFPB) API within a specified date range. The date range is determined based on previously downloaded data stored in a MongoDB database. The retrieved data is filtered and saved in a JSON format in an S3 bucket. The updated date range information is then stored in the MongoDB database for future reference. The glue job then converts the JSON data in the S3 bucket into a Spark DataFrame, performs a left join with a DynamicFrame from a DynamoDB table, filters out necessary rows, and writes the result back to the DynamoDB table. The original JSON file is also archived in S3.
